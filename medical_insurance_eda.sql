@@ -1,7 +1,6 @@
 -- ============================================================
 -- PROJECT   : Medical Insurance Data - Exploratory Data Analysis
--- AUTHOR    : Theophilus Ehimegbe
--- TOOL      : MySQL Workbench
+-- TOOL      : SSMS
 -- DATASET   : medical_insurance (1,338 records, 7 fields)
 -- PURPOSE   : Uncover cost drivers across demographics, smoking
 --             status, BMI, family size, and region to support
