@@ -193,7 +193,7 @@ For policyholders approaching the 60+ tier (average $21,248 in charges), proacti
    - Right-click the database in Object Explorer, select **Tasks > Import Flat File**, and follow the wizard to map the CSV columns
    - Alternatively, use the **Import and Export Wizard** via **Tasks > Import Data** and select Flat File as the data source
 5. Once the data is loaded, open `medical_insurance_eda.sql` in a new query window
-6. Run the script from top to bottom using **F5** or the **Execute** button
+6. Run the script.
 7. Each section is separated by a clear banner comment. You can highlight and run individual sections independently using **F5** on the selected text
 
 > **Note:** The script creates all staging tables automatically. No manual table setup is required before running. If you are using a named SQL Server instance, ensure your connection string in SSMS reflects the correct instance name (e.g., `SERVERNAME\SQLEXPRESS`).
