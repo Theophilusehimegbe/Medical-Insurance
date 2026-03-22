@@ -1,6 +1,6 @@
 # Medical Insurance Data Analysis | SQL Exploratory Data Analysis (EDA)
 
-![SQL](https://img.shields.io/badge/Language-SQL-blue) ![Tool](https://img.shields.io/badge/Tool-MySQL%20Workbench-orange) ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+![SQL](https://img.shields.io/badge/Language-SQL-blue) ![Tool](https://img.shields.io/badge/Tool-SSMS-red) ![Database](https://img.shields.io/badge/Database-SQL%20Server-CC2927) ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
 ---
 
@@ -165,7 +165,7 @@ The Southeast consistently appears as the highest-cost region across multiple an
 **4. Age-Tiered Preventive Care Incentives**
 Since charges increase substantially after age 40, insurers should introduce age-tiered incentives for preventive screenings and wellness checkups targeted at policyholders in the 35-49 bracket, before costs escalate significantly.
 
-**5. Scholarship Map for Aligned Extracurricular Recognition**
+**5. Chronic Disease Management for the 60+ Segment**
 For policyholders approaching the 60+ tier (average $21,248 in charges), proactive chronic disease management programs and personalized care coordination could reduce avoidable high-cost claims.
 
 ---
@@ -174,22 +174,29 @@ For policyholders approaching the 60+ tier (average $21,248 in charges), proacti
 
 | Tool | Purpose |
 |---|---|
-| **MySQL** | Database engine for all queries and data transformations |
-| **MySQL Workbench** | Query development, execution environment, and result visualization |
-| **CSV (Excel-compatible)** | Source data format for import |
+| **Microsoft SQL Server** | Relational database engine used to store, stage, and query the dataset |
+| **SQL Server Management Studio (SSMS)** | Primary environment for writing, executing, and organizing all SQL queries |
+| **CSV (Excel-compatible)** | Source data format used for initial import into SQL Server |
 
 ---
 
 ## How to Reproduce
 
 1. Clone or download this repository
-2. Open **MySQL Workbench** and connect to your local MySQL instance
-3. Create a new schema called `medical`
-4. Import `medical_insurance.csv` into a table called `medical_insurance` using the Table Data Import Wizard or a `LOAD DATA` statement
-5. Open `SQL Syntax.sql` and run the queries in order from top to bottom
-6. Each section is clearly commented with the analytical category and the specific question being answered
+2. Open **SQL Server Management Studio (SSMS)** and connect to your local or remote SQL Server instance
+3. Create a new database by running:
+   ```sql
+   CREATE DATABASE medical;
+   USE medical;
+   ```
+4. Import `medical_insurance.csv` into a table called `medical_insurance` using one of the following methods:
+   - Right-click the database in Object Explorer, select **Tasks > Import Flat File**, and follow the wizard to map the CSV columns
+   - Alternatively, use the **Import and Export Wizard** via **Tasks > Import Data** and select Flat File as the data source
+5. Once the data is loaded, open `medical_insurance_eda.sql` in a new query window
+6. Run the script from top to bottom using **F5** or the **Execute** button
+7. Each section is separated by a clear banner comment. You can highlight and run individual sections independently using **F5** on the selected text
 
-> **Note:** The script creates staging tables automatically. You do not need to manually create any tables before running the file.
+> **Note:** The script creates all staging tables automatically. No manual table setup is required before running. If you are using a named SQL Server instance, ensure your connection string in SSMS reflects the correct instance name (e.g., `SERVERNAME\SQLEXPRESS`).
 
 ---
 
@@ -199,7 +206,7 @@ For policyholders approaching the 60+ tier (average $21,248 in charges), proacti
 medical-insurance-eda/
 │
 ├── medical_insurance.csv       # Raw dataset (1,338 rows, 7 columns)
-├── SQL Syntax.sql              # Full SQL script: staging, deduplication, and 20 EDA queries
+├── medical_insurance_eda.sql   # Full SQL script: staging, deduplication, and 20 EDA queries
 └── README.md                   # Project documentation (this file)
 ```
 
